@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +5,66 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 </head>
 <body onload="initializeGame();">
+<style>
+.button {
+    background-color: #FFC300;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button:hover {
+background-color: gold;
+}
+.buysth {
+    background-color: #B6361A;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.buysth:hover {
+background-color: #EF4A27;
+}
+
+</style>
 
 
-<!-- TODO: Setup your GUI -->
-<!-- You may assume that there will be exactly 3 types of equipment with ids of "shovel", "excavator", and "mine" -->
-<!-- You may hardcode elements as HTML and/or use JavaScript with the initializeGame() function to setup your GUI -->
+<h1><strong>Username: <span id="username"></span></strong></h1>
+<h2>Current gold: <span id="gold"></span></h2>
 
+<button class="button", onclick="clickGold();">Get Gold</button>
+<button class ="buysth", onclick="buyEquipment('shovel');">Buy Shovel</button>
+<button class ="buysth", onclick="buyEquipment('excavator');">Buy Excavator</button>
+<button class ="buysth", onclick="buyEquipment('mine');">Buy Mine</button>
+
+<br>
+<h3>Shovel:</h3>
+<ul>
+    <p>Name: <span id="shovelName"></span></p>
+    <li>Owned: <span id="shovelOwned"></span></li>
+    <li>Cost: <span id="shovelCost"></span></li>
+</ul>
+
+<br>
+<h3>Excavator:</h3>
+<ul>
+    <p>Name: <span id="excavatorName"></span></p>
+    <li>Owned: <span id="excavatorOwned"></span></li>
+    <li>Cost: <span id="excavatorCost"></span></li>
+</ul>
+
+<br>
+<h3>Mine:</h3>
+<ul>
+    <p>Name: <span id="mineName"></span></p>
+    <li>Owned: <span id="mineOwned"></span></li>
+    <li>Cost: <span id="mineCost"></span></li>
+</ul>
 
 <script src="game.js"></script>
 
